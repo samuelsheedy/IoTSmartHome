@@ -1,0 +1,593 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x75262170, pid=1027, tid=0x617a1470
+#
+# JRE version: OpenJDK Runtime Environment (8.0_181-b13) (build 1.8.0_181-8u181-b13-2~deb9u1-b13)
+# Java VM: OpenJDK Client VM (25.181-b13 mixed mode linux-aarch32 )
+# Problematic frame:
+# C  [libstdc++.so.6+0x83170]  std::__detail::_List_node_base::_M_unhook()+0x8
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x422f6279
+
+Registers:
+R0=0x62d9f718
+R1=0x00000000
+R2=0x422f6279
+R3=0x6e69744c
+R4=0x62cff088
+R5=0x637041b0
+R6=0x00000000
+R7=0x00000002
+R8=0x617a05c0
+R9=0x617a055c
+R10=0x62997c0c
+R11=0x617a024c
+R12=0x62cfe950
+R13=0x617a0230
+R14=0x62ca8194
+R15=0x75262170
+
+Top of Stack: (sp=0x617a0230)
+0x617a0230:   62d9f718 62cff088 617a0250 617a0250
+0x617a0240:   6e69744c 62cff088 617a0264 62cad5b8
+0x617a0250:   62d9f718 62cff088 62d9f718 6e69744c
+0x617a0260:   617a0294 62ca9e58 617a03e4 00000000
+0x617a0270:   00000003 62cff064 63708990 62d9f718
+0x617a0280:   62cff088 62d9f718 63708990 63708990
+0x617a0290:   617a0464 62caaee8 617a02b0 63708990
+0x617a02a0:   6370003c 00000000 637041b0 63707878 
+
+Instructions: (pc=0x75262170)
+0x75262150:   04 30 91 e5 0a 00 80 e8 04 30 91 e5 00 00 83 e5
+0x75262160:   04 00 81 e5 1e ff 2f e1 00 30 90 e5 04 20 90 e5
+0x75262170:   00 30 82 e5 04 20 83 e5 1e ff 2f e1 00 30 90 e5
+0x75262180:   03 00 50 e1 11 00 00 0a 00 20 91 e5 02 00 51 e1 
+
+Register to memory mapping:
+
+R0=0x62d9f718 is an unknown value
+R1=0x00000000 is an unknown value
+R2=0x422f6279 is an unknown value
+R3=0x6e69744c is an unallocated location in the heap
+R4=0x62cff088: <offset 0xb3088> in /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1 at 0x62c4c000
+R5=0x637041b0 is an unknown value
+R6=0x00000000 is an unknown value
+R7=0x00000002 is an unknown value
+R8=0x617a05c0 is an unknown value
+R9=0x617a055c is an unknown value
+R10=0x62997c0c: g_cclosure_marshal_VOID__OBJECT+0 in /usr/lib/arm-linux-gnueabihf/libgobject-2.0.so.0 at 0x62986000
+R11=0x617a024c is an unknown value
+R12=0x62cfe950: <offset 0xb2950> in /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1 at 0x62c4c000
+R13=0x617a0230 is an unknown value
+R14=0x62ca8194: _ZNSt7__cxx114listISt10shared_ptrIN5tinyb14BluetoothEventEESaIS4_EE8_M_eraseESt14_List_iteratorIS4_E+0x30 in /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1 at 0x62c4c000
+R15=0x75262170: _ZNSt8__detail15_List_node_base9_M_unhookEv+0x8 in /usr/lib/arm-linux-gnueabihf/libstdc++.so.6 at 0x751df000
+
+
+Stack: [0x60fa2000,0x617a2000],  sp=0x617a0230,  free space=8184k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libstdc++.so.6+0x83170]  std::__detail::_List_node_base::_M_unhook()+0x8
+C  [libtinyb.so.0.5.1+0x615b8]  std::__cxx11::list<std::shared_ptr<tinyb::BluetoothEvent>, std::allocator<std::shared_ptr<tinyb::BluetoothEvent> > >::erase(std::_List_const_iterator<std::shared_ptr<tinyb::BluetoothEvent> >)+0x48
+C  [libtinyb.so.0.5.1+0x5de58]  tinyb::BluetoothManager::handle_event(tinyb::BluetoothType, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, tinyb::BluetoothObject*, tinyb::BluetoothObject&)+0x36c
+C  [libtinyb.so.0.5.1+0x5eee8]  tinyb::BluetoothEventManager::on_interface_added(_GDBusObject*, _GDBusInterface*, void*)+0x160
+C  [libtinyb.so.0.5.1+0x5f544]  tinyb::BluetoothEventManager::on_object_added(_GDBusObjectManager*, _GDBusObject*, void*)+0x5c
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1902K [0x64600000, 0x64b50000, 0x69350000)
+  eden space 4416K,  43% used [0x64600000, 0x647dbb18, 0x64a50000)
+  from space 512K,   0% used [0x64a50000, 0x64a50000, 0x64ad0000)
+  to   space 512K,   0% used [0x64ad0000, 0x64ad0000, 0x64b50000)
+ tenured generation   total 10944K, used 0K [0x69350000, 0x69e00000, 0x72e00000)
+   the space 10944K,   0% used [0x69350000, 0x69350000, 0x69350200, 0x69e00000)
+ Metaspace       used 2094K, capacity 2240K, committed 2328K, reserved 4400K
+
+Card table byte_map: [0x72e0b000,0x72e80000] byte_map_base: 0x72ae8000
+
+Polling page: 0x76fb7000
+
+CodeCache: size=32768Kb used=1227Kb max_used=1227Kb free=31540Kb
+ bounds [0x72f00000, 0x73038000, 0x74f00000]
+ total_blobs=187 nmethods=43 adapters=76
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.482 Thread 0x74f83800   39             java.lang.String::<init> (82 bytes)
+Event: 0.484 Thread 0x74f83800 nmethod 39 0x7302fd88 code [0x7302fee0, 0x730301cc]
+Event: 0.485 Thread 0x74f83800   40             java.util.Properties::loadConvert (505 bytes)
+Event: 0.487 Thread 0x74f83800 nmethod 40 0x73030408 code [0x73030540, 0x73030a44]
+Event: 0.502 Thread 0x74f83800   41             sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 0.506 Thread 0x74f83800 nmethod 41 0x73031548 code [0x730316e0, 0x73031ec4]
+Event: 0.757 Thread 0x74f83800   42             java.util.Arrays::copyOf (19 bytes)
+Event: 0.758 Thread 0x74f83800 nmethod 42 0x730328c8 code [0x730329c0, 0x73032bb0]
+Event: 1.626 Thread 0x74f83800   43             java.nio.charset.CharsetEncoder::maxBytesPerChar (5 bytes)
+Event: 1.626 Thread 0x74f83800 nmethod 43 0x73032c88 code [0x73032d80, 0x73032e3c]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64765df0) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64765ff0) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64766ae8) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64766ce8) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64767860) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64767a60) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64768488) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.459 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64768688) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.460 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64769160) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0.460 Thread 0x74f0a000 Exception <a 'java/security/PrivilegedActionException'> (0x64769360) thrown at [/build/openjdk-8-L4Anb7/openjdk-8-8u181-b13/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+
+Events (10 events):
+Event: 0.748 loading class tinyb/BluetoothObject
+Event: 0.748 loading class tinyb/BluetoothObject done
+Event: 0.752 loading class tinyb/BluetoothType
+Event: 0.752 loading class tinyb/BluetoothType done
+Event: 0.757 loading class tinyb/BluetoothDevice
+Event: 0.757 loading class tinyb/BluetoothDevice done
+Event: 1.618 loading class tinyb/BluetoothGattService
+Event: 1.618 loading class tinyb/BluetoothGattService done
+Event: 1.624 loading class tinyb/BluetoothAdapter
+Event: 1.624 loading class tinyb/BluetoothAdapter done
+
+
+Dynamic libraries:
+00010000-00011000 r-xp 00000000 b3:07 714072     /usr/lib/jvm/java-8-openjdk-armhf/jre/bin/java
+00020000-00021000 r--p 00000000 b3:07 714072     /usr/lib/jvm/java-8-openjdk-armhf/jre/bin/java
+00021000-00022000 rw-p 00001000 b3:07 714072     /usr/lib/jvm/java-8-openjdk-armhf/jre/bin/java
+00e3a000-00e5b000 rw-p 00000000 00:00 0          [heap]
+60fa1000-60fa2000 ---p 00000000 00:00 0 
+60fa2000-617a2000 rw-p 00000000 00:00 0 
+617a2000-617a3000 ---p 00000000 00:00 0 
+617a3000-61fa3000 rw-p 00000000 00:00 0 
+61fa3000-61fa4000 ---p 00000000 00:00 0 
+61fa4000-627a4000 rw-p 00000000 00:00 0 
+627a4000-627eb000 r-xp 00000000 b3:07 539483     /usr/lib/arm-linux-gnueabihf/libjavatinyb.so.0.5.1
+627eb000-627fb000 ---p 00047000 b3:07 539483     /usr/lib/arm-linux-gnueabihf/libjavatinyb.so.0.5.1
+627fb000-627fc000 r--p 00047000 b3:07 539483     /usr/lib/arm-linux-gnueabihf/libjavatinyb.so.0.5.1
+627fc000-627fd000 rw-p 00048000 b3:07 539483     /usr/lib/arm-linux-gnueabihf/libjavatinyb.so.0.5.1
+627fd000-62836000 r-xp 00000000 b3:07 297361     /lib/arm-linux-gnueabihf/libblkid.so.1.1.0
+62836000-62846000 ---p 00039000 b3:07 297361     /lib/arm-linux-gnueabihf/libblkid.so.1.1.0
+62846000-62848000 r--p 00039000 b3:07 297361     /lib/arm-linux-gnueabihf/libblkid.so.1.1.0
+62848000-62849000 rw-p 0003b000 b3:07 297361     /lib/arm-linux-gnueabihf/libblkid.so.1.1.0
+62849000-6284a000 rw-p 00000000 00:00 0 
+6284a000-62851000 r-xp 00000000 b3:07 532748     /usr/lib/arm-linux-gnueabihf/libffi.so.6.0.4
+62851000-62860000 ---p 00007000 b3:07 532748     /usr/lib/arm-linux-gnueabihf/libffi.so.6.0.4
+62860000-62861000 r--p 00006000 b3:07 532748     /usr/lib/arm-linux-gnueabihf/libffi.so.6.0.4
+62861000-62862000 rw-p 00007000 b3:07 532748     /usr/lib/arm-linux-gnueabihf/libffi.so.6.0.4
+62862000-628a2000 r-xp 00000000 b3:07 297450     /lib/arm-linux-gnueabihf/libmount.so.1.1.0
+628a2000-628b2000 ---p 00040000 b3:07 297450     /lib/arm-linux-gnueabihf/libmount.so.1.1.0
+628b2000-628b3000 r--p 00040000 b3:07 297450     /lib/arm-linux-gnueabihf/libmount.so.1.1.0
+628b3000-628b4000 rw-p 00041000 b3:07 297450     /lib/arm-linux-gnueabihf/libmount.so.1.1.0
+628b4000-628b5000 rw-p 00000000 00:00 0 
+628b5000-628c6000 r-xp 00000000 b3:07 278858     /lib/arm-linux-gnueabihf/libresolv-2.24.so
+628c6000-628d6000 ---p 00011000 b3:07 278858     /lib/arm-linux-gnueabihf/libresolv-2.24.so
+628d6000-628d7000 r--p 00011000 b3:07 278858     /lib/arm-linux-gnueabihf/libresolv-2.24.so
+628d7000-628d8000 rw-p 00012000 b3:07 278858     /lib/arm-linux-gnueabihf/libresolv-2.24.so
+628d8000-628da000 rw-p 00000000 00:00 0 
+628da000-628fa000 r-xp 00000000 b3:07 297522     /lib/arm-linux-gnueabihf/libselinux.so.1
+628fa000-6290a000 ---p 00020000 b3:07 297522     /lib/arm-linux-gnueabihf/libselinux.so.1
+6290a000-6290b000 r--p 00020000 b3:07 297522     /lib/arm-linux-gnueabihf/libselinux.so.1
+6290b000-6290c000 rw-p 00021000 b3:07 297522     /lib/arm-linux-gnueabihf/libselinux.so.1
+6290c000-6290d000 rw-p 00000000 00:00 0 
+6290d000-62975000 r-xp 00000000 b3:07 297531     /lib/arm-linux-gnueabihf/libpcre.so.3.13.3
+62975000-62984000 ---p 00068000 b3:07 297531     /lib/arm-linux-gnueabihf/libpcre.so.3.13.3
+62984000-62985000 r--p 00067000 b3:07 297531     /lib/arm-linux-gnueabihf/libpcre.so.3.13.3
+62985000-62986000 rw-p 00068000 b3:07 297531     /lib/arm-linux-gnueabihf/libpcre.so.3.13.3
+62986000-629cf000 r-xp 00000000 b3:07 532432     /usr/lib/arm-linux-gnueabihf/libgobject-2.0.so.0.5000.3
+629cf000-629de000 ---p 00049000 b3:07 532432     /usr/lib/arm-linux-gnueabihf/libgobject-2.0.so.0.5000.3
+629de000-629df000 r--p 00048000 b3:07 532432     /usr/lib/arm-linux-gnueabihf/libgobject-2.0.so.0.5000.3
+629df000-629e0000 rw-p 00049000 b3:07 532432     /usr/lib/arm-linux-gnueabihf/libgobject-2.0.so.0.5000.3
+629e0000-62b2f000 r-xp 00000000 b3:07 531684     /usr/lib/arm-linux-gnueabihf/libgio-2.0.so.0.5000.3
+62b2f000-62b3f000 ---p 0014f000 b3:07 531684     /usr/lib/arm-linux-gnueabihf/libgio-2.0.so.0.5000.3
+62b3f000-62b41000 r--p 0014f000 b3:07 531684     /usr/lib/arm-linux-gnueabihf/libgio-2.0.so.0.5000.3
+62b41000-62b43000 rw-p 00151000 b3:07 531684     /usr/lib/arm-linux-gnueabihf/libgio-2.0.so.0.5000.3
+62b43000-62b44000 rw-p 00000000 00:00 0 
+62b44000-62c3b000 r-xp 00000000 b3:07 297359     /lib/arm-linux-gnueabihf/libglib-2.0.so.0.5000.3
+62c3b000-62c4a000 ---p 000f7000 b3:07 297359     /lib/arm-linux-gnueabihf/libglib-2.0.so.0.5000.3
+62c4a000-62c4b000 r--p 000f6000 b3:07 297359     /lib/arm-linux-gnueabihf/libglib-2.0.so.0.5000.3
+62c4b000-62c4c000 rw-p 000f7000 b3:07 297359     /lib/arm-linux-gnueabihf/libglib-2.0.so.0.5000.3
+62c4c000-62cec000 r-xp 00000000 b3:07 539815     /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1
+62cec000-62cfc000 ---p 000a0000 b3:07 539815     /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1
+62cfc000-62cfd000 r--p 000a0000 b3:07 539815     /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1
+62cfd000-62d00000 rw-p 000a1000 b3:07 539815     /usr/lib/arm-linux-gnueabihf/libtinyb.so.0.5.1
+62d00000-62dcb000 rw-p 00000000 00:00 0 
+62dcb000-62e00000 ---p 00000000 00:00 0 
+62e00000-62efe000 rw-p 00000000 00:00 0 
+62efe000-62f00000 ---p 00000000 00:00 0 
+62f02000-62f05000 r-xp 00000000 b3:07 297397     /lib/arm-linux-gnueabihf/libuuid.so.1.3.0
+62f05000-62f14000 ---p 00003000 b3:07 297397     /lib/arm-linux-gnueabihf/libuuid.so.1.3.0
+62f14000-62f15000 r--p 00002000 b3:07 297397     /lib/arm-linux-gnueabihf/libuuid.so.1.3.0
+62f15000-62f16000 rw-p 00003000 b3:07 297397     /lib/arm-linux-gnueabihf/libuuid.so.1.3.0
+62f16000-62f19000 r-xp 00000000 b3:07 531732     /usr/lib/arm-linux-gnueabihf/libgmodule-2.0.so.0.5000.3
+62f19000-62f28000 ---p 00003000 b3:07 531732     /usr/lib/arm-linux-gnueabihf/libgmodule-2.0.so.0.5000.3
+62f28000-62f29000 r--p 00002000 b3:07 531732     /usr/lib/arm-linux-gnueabihf/libgmodule-2.0.so.0.5000.3
+62f29000-62f2a000 rw-p 00003000 b3:07 531732     /usr/lib/arm-linux-gnueabihf/libgmodule-2.0.so.0.5000.3
+62f42000-62f43000 r--s 00003000 b3:07 448306     /home/pi/build/tinyb/cmake/java/tinyb.jar
+62f43000-62f46000 r--s 00059000 b3:07 346506     /home/pi/jadex-3.0.115/lib/webcam-capture-0.3.9.jar
+62f46000-62f48000 r--s 00005000 b3:07 346510     /home/pi/jadex-3.0.115/lib/slf4j-api-1.7.2.jar
+62f48000-62f56000 r--s 000d1000 b3:07 346507     /home/pi/jadex-3.0.115/lib/jcodec-0.1.5.jar
+62f56000-62f59000 r--s 0001c000 b3:07 346513     /home/pi/jadex-3.0.115/lib/jcalendar-1.3.2.jar
+62f59000-62f5a000 r--s 00000000 b3:07 346536     /home/pi/jadex-3.0.115/lib/jadex-tools-benchmarks-3.0.115.jar
+62f5a000-62f5d000 r--s 00014000 b3:07 346542     /home/pi/jadex-3.0.115/lib/jadex-rules-applications-3.0.115.jar
+62f5d000-62f5e000 r--s 00000000 b3:07 346534     /home/pi/jadex-3.0.115/lib/jadex-platform-standalone-launch-3.0.115.jar
+62f5e000-62f61000 r--s 00027000 b3:07 346544     /home/pi/jadex-3.0.115/lib/stringtemplate-3.2.jar
+62f61000-62f63000 r--s 00006000 b3:07 346558     /home/pi/jadex-3.0.115/lib/minimal-json-0.9.4.jar
+62f63000-62f67000 r--s 00112000 b3:07 346500     /home/pi/jadex-3.0.115/lib/jna-4.2.1.jar
+62f67000-62f7c000 r--s 001b0000 b3:07 346499     /home/pi/jadex-3.0.115/lib/jna-platform-4.2.1.jar
+62f7c000-62f9e000 r--s 00121000 b3:07 346497     /home/pi/jadex-3.0.115/lib/prov-1.54.0.0.jar
+62f9e000-62fa4000 r--s 00036000 b3:07 346569     /home/pi/jadex-3.0.115/lib/junit-4.11.jar
+62fa4000-62faa000 r--s 00040000 b3:07 346553     /home/pi/jadex-3.0.115/lib/smack-3.1.0.jar
+62faa000-62fb5000 r--s 00073000 b3:07 346552     /home/pi/jadex-3.0.115/lib/smackx-3.1.0.jar
+62fb5000-62fbb000 r--s 00046000 b3:07 346549     /home/pi/jadex-3.0.115/lib/jcommon-1.0.15.jar
+62fbb000-62fcb000 r--s 0013f000 b3:07 346548     /home/pi/jadex-3.0.115/lib/jfreechart-1.0.12.jar
+62fcb000-62fd3000 r--s 00075000 b3:07 346539     /home/pi/jadex-3.0.115/lib/mail-1.4.5.jar
+62fd3000-62fdb000 r--s 00048000 b3:07 346523     /home/pi/jadex-3.0.115/lib/jung-visualization-2.0.1.jar
+62fdb000-62fe0000 r--s 00034000 b3:07 346524     /home/pi/jadex-3.0.115/lib/jung-algorithms-2.0.1.jar
+62fe0000-62fe2000 r--s 0000e000 b3:07 346522     /home/pi/jadex-3.0.115/lib/jung-graph-impl-2.0.1.jar
+62fe2000-62fe5000 r--s 00008000 b3:07 346525     /home/pi/jadex-3.0.115/lib/jung-api-2.0.1.jar
+62fe5000-62fe7000 r--s 00009000 b3:07 346571     /home/pi/jadex-3.0.115/lib/jadex-rules-eca-3.0.115.jar
+62fe7000-62fe8000 r--s 00002000 b3:07 346503     /home/pi/jadex-3.0.115/lib/jadex-tools-base-3.0.115.jar
+62fe8000-62fec000 r--s 00027000 b3:07 346535     /home/pi/jadex-3.0.115/lib/jadex-xml-3.0.115.jar
+62fec000-62ff3000 r--s 00065000 b3:07 346567     /home/pi/jadex-3.0.115/lib/jadex-rules-3.0.115.jar
+62ff3000-63000000 r--s 00096000 b3:07 346529     /home/pi/jadex-3.0.115/lib/jadex-tools-base-swing-3.0.115.jar
+63000000-630f9000 rw-p 00000000 00:00 0 
+630f9000-63100000 ---p 00000000 00:00 0 
+63100000-63107000 r--s 00093000 b3:07 346550     /home/pi/jadex-3.0.115/lib/jadex-tools-comanalyzer-3.0.115.jar
+63107000-6310b000 r--s 0001c000 b3:07 346521     /home/pi/jadex-3.0.115/lib/jadex-rules-tools-3.0.115.jar
+6310b000-63120000 r--s 00146000 b3:07 346546     /home/pi/jadex-3.0.115/lib/jadex-runtimetools-swing-3.0.115.jar
+63120000-63122000 r--s 0000d000 b3:07 346554     /home/pi/jadex-3.0.115/lib/jadex-tools-bpmn-3.0.115.jar
+63122000-63124000 r--s 0000d000 b3:07 346530     /home/pi/jadex-3.0.115/lib/jadex-tools-bdi-3.0.115.jar
+63124000-6312f000 r--s 00108000 b3:07 346520     /home/pi/jadex-3.0.115/lib/jogl.jar
+6312f000-63145000 r--s 000f6000 b3:07 346538     /home/pi/jadex-3.0.115/lib/jadex-platform-3.0.115.jar
+63145000-63148000 r--s 00018000 b3:07 346565     /home/pi/jadex-3.0.115/lib/jadex-model-bpmn-3.0.115.jar
+63148000-6314b000 r--s 00019000 b3:07 346555     /home/pi/jadex-3.0.115/lib/jadex-kernel-micro-3.0.115.jar
+6314b000-6314c000 r--s 00136000 b3:07 346518     /home/pi/jadex-3.0.115/lib/jadex-kernel-extension-envsupport-opengl-3.0.115.jar
+6314c000-63200000 r--s 009d3000 b3:07 346502     /home/pi/jadex-3.0.115/apps/jadex-editor-bpmn-3.0.115.jar
+63200000-632fe000 rw-p 00000000 00:00 0 
+632fe000-63300000 ---p 00000000 00:00 0 
+63300000-63321000 rw-p 00000000 00:00 0 
+63321000-63400000 ---p 00000000 00:00 0 
+63400000-63409000 r--s 00064000 b3:07 346547     /home/pi/jadex-3.0.115/lib/jadex-kernel-extension-envsupport-3.0.115.jar
+63409000-6340a000 r--s 00003000 b3:07 346566     /home/pi/jadex-3.0.115/lib/jadex-kernel-extension-agr-3.0.115.jar
+6340a000-6340c000 r--s 00005000 b3:07 346564     /home/pi/jadex-3.0.115/lib/jadex-kernel-component-3.0.115.jar
+6340c000-63412000 r--s 0003e000 b3:07 346561     /home/pi/jadex-3.0.115/lib/jadex-kernel-bpmn-3.0.115.jar
+63412000-6341d000 r--s 00090000 b3:07 346559     /home/pi/jadex-3.0.115/lib/jadex-kernel-bdiv3-3.0.115.jar
+6341d000-63420000 r--s 00011000 b3:07 346516     /home/pi/jadex-3.0.115/lib/jadex-kernel-base-3.0.115.jar
+63420000-63422000 r--s 00005000 b3:07 346493     /home/pi/jadex-3.0.115/lib/jadex-kernel-application-3.0.115.jar
+63422000-63426000 r--s 00018000 b3:07 346557     /home/pi/jadex-3.0.115/lib/jadex-json-3.0.115.jar
+63426000-63434000 r--s 000b5000 b3:07 346517     /home/pi/jadex-3.0.115/lib/jadex-commons-3.0.115.jar
+63434000-6344f000 r--s 0010b000 b3:07 346568     /home/pi/jadex-3.0.115/lib/jadex-bridge-3.0.115.jar
+6344f000-63469000 r--s 0012c000 b3:07 346505     /home/pi/jadex-3.0.115/lib/jadex-applications-micro-3.0.115.jar
+63469000-6347f000 r--s 0020e000 b3:07 346512     /home/pi/jadex-3.0.115/lib/jadex-applications-bdiv3-3.0.115.jar
+6347f000-63480000 ---p 00000000 00:00 0 
+63480000-63500000 rw-p 00000000 00:00 0 
+63500000-635d2000 rw-p 00000000 00:00 0 
+635d2000-63600000 ---p 00000000 00:00 0 
+63600000-63602000 r--s 0001b000 b3:07 346563     /home/pi/jadex-3.0.115/lib/jadex-javaparser-3.0.115.jar
+63602000-63603000 r--s 00000000 b3:07 346533     /home/pi/jadex-3.0.115/lib/jadex-integration-test-3.0.115.jar
+63603000-63609000 r--s 00036000 b3:07 346495     /home/pi/jadex-3.0.115/lib/jadex-commons-gui-3.0.115.jar
+63609000-6360c000 r--s 0000f000 b3:07 346504     /home/pi/jadex-3.0.115/lib/jadex-applications-java8-3.0.115.jar
+6360c000-63612000 r--s 0003e000 b3:07 346494     /home/pi/jadex-3.0.115/lib/jadex-applications-bpmn-3.0.115.jar
+63612000-63636000 r--s 0023e000 b3:07 346541     /home/pi/jadex-3.0.115/lib/jadex-applications-bdi-3.0.115.jar
+63636000-63639000 r--s 0001d000 b3:07 346551     /home/pi/jadex-3.0.115/lib/jadex-applib-bdi-3.0.115.jar
+63639000-63645000 r--s 0016b000 b3:07 346537     /home/pi/jadex-3.0.115/lib/h2-1.3.171.jar
+63645000-63654000 r--s 000e1000 b3:07 346511     /home/pi/jadex-3.0.115/lib/dx-1.7.jar
+63654000-6367f000 r--s 0026d000 b3:07 346498     /home/pi/jadex-3.0.115/lib/core-1.54.0.0.jar
+6367f000-63683000 ---p 00000000 00:00 0 
+63683000-63700000 rw-p 00000000 00:00 0 
+63700000-63721000 rw-p 00000000 00:00 0 
+63721000-63800000 ---p 00000000 00:00 0 
+63800000-63801000 r--s 00002000 b3:07 346496     /home/pi/jadex-3.0.115/lib/jadex-commons-security-3.0.115.jar
+63801000-63802000 r--s 00001000 b3:07 346562     /home/pi/jadex-3.0.115/lib/jadex-applications-mixed-3.0.115.jar
+63802000-63804000 r--s 00009000 b3:07 346570     /home/pi/jadex-3.0.115/lib/hamcrest-core-1.3.jar
+63804000-6380b000 r--s 00057000 b3:07 346508     /home/pi/jadex-3.0.115/lib/filters-2.0.235-1.jar
+6380b000-6380e000 r--s 00017000 b3:07 346514     /home/pi/jadex-3.0.115/lib/de.huxhorn.sulky.3rdparty.jlayer-1.0.jar
+6380e000-63815000 r--s 00028000 b3:07 346528     /home/pi/jadex-3.0.115/lib/concurrent-1.3.4.jar
+63815000-63823000 r--s 00081000 b3:07 346527     /home/pi/jadex-3.0.115/lib/colt-1.2.0.jar
+63823000-6382f000 r--s 00076000 b3:07 346526     /home/pi/jadex-3.0.115/lib/collections-generic-4.01.jar
+6382f000-63837000 r--s 000cf000 b3:07 346509     /home/pi/jadex-3.0.115/lib/bridj-0.6.2.jar
+63837000-6383c000 r--s 00036000 b3:07 346560     /home/pi/jadex-3.0.115/lib/asm-all-5.0.3.jar
+6383c000-6383f000 r--s 00022000 b3:07 346543     /home/pi/jadex-3.0.115/lib/antlr-runtime-3.1.3.jar
+6383f000-63844000 r--s 00068000 b3:07 346545     /home/pi/jadex-3.0.115/lib/antlr-2.7.7.jar
+63844000-63848000 r--s 0000f000 b3:07 346515     /home/pi/jadex-3.0.115/lib/annotations-3.0.0.jar
+63848000-6384a000 r--s 0000e000 b3:07 346540     /home/pi/jadex-3.0.115/lib/activation-1.1.jar
+6384a000-63865000 r--s 001d6000 b3:07 714136     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/nashorn.jar
+63865000-63a00000 r--p 00000000 b3:07 393250     /usr/lib/locale/locale-archive
+63a00000-63a21000 rw-p 00000000 00:00 0 
+63a21000-63b00000 ---p 00000000 00:00 0 
+63b00000-63b21000 rw-p 00000000 00:00 0 
+63b21000-63c00000 ---p 00000000 00:00 0 
+63c00000-63c06000 r--s 0003b000 b3:07 714138     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/sunjce_provider.jar
+63c06000-63c10000 r--s 00116000 b3:07 714135     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/localedata.jar
+63c10000-63c13000 ---p 00000000 00:00 0 
+63c13000-63c60000 rw-p 00000000 00:00 0 
+63c60000-63c63000 ---p 00000000 00:00 0 
+63c63000-63cb0000 rw-p 00000000 00:00 0 
+63cb0000-63cb3000 ---p 00000000 00:00 0 
+63cb3000-63d00000 rw-p 00000000 00:00 0 
+63d00000-63d21000 rw-p 00000000 00:00 0 
+63d21000-63e00000 ---p 00000000 00:00 0 
+63e00000-63e02000 r--s 0000b000 b3:07 346531     /home/pi/jadex-3.0.115/apps/jadex-applications-web-3.0.115.jar
+63e02000-63e1d000 r--s 00394000 b3:07 714131     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/cldrdata.jar
+63e1d000-63e20000 ---p 00000000 00:00 0 
+63e20000-63e6d000 rw-p 00000000 00:00 0 
+63e6d000-63e6e000 ---p 00000000 00:00 0 
+63e6e000-63f3c000 rw-p 00000000 00:00 0 
+63f3c000-6410b000 r--s 03c33000 b3:07 714160     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/rt.jar
+6410b000-643ac000 rw-p 00000000 00:00 0 
+643ac000-645b2000 ---p 00000000 00:00 0 
+645b2000-645b8000 rw-p 00000000 00:00 0 
+645b8000-64600000 ---p 00000000 00:00 0 
+64600000-64b50000 rw-p 00000000 00:00 0 
+64b50000-69350000 ---p 00000000 00:00 0 
+69350000-69e00000 rw-p 00000000 00:00 0 
+69e00000-72e00000 ---p 00000000 00:00 0 
+72e00000-72e01000 r--s 00004000 b3:07 346519     /home/pi/jadex-3.0.115/lib/gluegen-rt.jar
+72e01000-72e03000 r--s 00001000 b3:07 714132     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/dnsns.jar
+72e03000-72e05000 r--s 00007000 b3:07 37487      /usr/share/java/java-atk-wrapper.jar
+72e05000-72e08000 r--s 00038000 b3:07 714139     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/sunpkcs11.jar
+72e08000-72e0b000 r--s 0000f000 b3:07 714133     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/icedtea-sound.jar
+72e0b000-72e0e000 rw-p 00000000 00:00 0 
+72e0e000-72e31000 ---p 00000000 00:00 0 
+72e31000-72e37000 rw-p 00000000 00:00 0 
+72e37000-72e7f000 ---p 00000000 00:00 0 
+72e7f000-72e85000 rw-p 00000000 00:00 0 
+72e85000-72f00000 ---p 00000000 00:00 0 
+72f00000-73038000 rwxp 00000000 00:00 0 
+73038000-74f00000 ---p 00000000 00:00 0 
+74f00000-75000000 rw-p 00000000 00:00 0 
+75000000-75001000 r--s 00010000 b3:07 714140     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/zipfs.jar
+75001000-75002000 r--s 0000a000 b3:07 714134     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/jaccess.jar
+75002000-7500b000 r-xp 00000000 b3:07 278844     /lib/arm-linux-gnueabihf/libnss_files-2.24.so
+7500b000-7501a000 ---p 00009000 b3:07 278844     /lib/arm-linux-gnueabihf/libnss_files-2.24.so
+7501a000-7501b000 r--p 00008000 b3:07 278844     /lib/arm-linux-gnueabihf/libnss_files-2.24.so
+7501b000-7501c000 rw-p 00009000 b3:07 278844     /lib/arm-linux-gnueabihf/libnss_files-2.24.so
+7501c000-75022000 rw-p 00000000 00:00 0 
+75022000-7502b000 r-xp 00000000 b3:07 278846     /lib/arm-linux-gnueabihf/libnss_nis-2.24.so
+7502b000-7503a000 ---p 00009000 b3:07 278846     /lib/arm-linux-gnueabihf/libnss_nis-2.24.so
+7503a000-7503b000 r--p 00008000 b3:07 278846     /lib/arm-linux-gnueabihf/libnss_nis-2.24.so
+7503b000-7503c000 rw-p 00009000 b3:07 278846     /lib/arm-linux-gnueabihf/libnss_nis-2.24.so
+7503c000-7504d000 r-xp 00000000 b3:07 278841     /lib/arm-linux-gnueabihf/libnsl-2.24.so
+7504d000-7505c000 ---p 00011000 b3:07 278841     /lib/arm-linux-gnueabihf/libnsl-2.24.so
+7505c000-7505d000 r--p 00010000 b3:07 278841     /lib/arm-linux-gnueabihf/libnsl-2.24.so
+7505d000-7505e000 rw-p 00011000 b3:07 278841     /lib/arm-linux-gnueabihf/libnsl-2.24.so
+7505e000-75060000 rw-p 00000000 00:00 0 
+75060000-75066000 r-xp 00000000 b3:07 278842     /lib/arm-linux-gnueabihf/libnss_compat-2.24.so
+75066000-75075000 ---p 00006000 b3:07 278842     /lib/arm-linux-gnueabihf/libnss_compat-2.24.so
+75075000-75076000 r--p 00005000 b3:07 278842     /lib/arm-linux-gnueabihf/libnss_compat-2.24.so
+75076000-75077000 rw-p 00006000 b3:07 278842     /lib/arm-linux-gnueabihf/libnss_compat-2.24.so
+75077000-7509c000 r-xp 00000000 b3:07 714102     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libjava.so
+7509c000-750ab000 ---p 00025000 b3:07 714102     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libjava.so
+750ab000-750ac000 r--p 00024000 b3:07 714102     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libjava.so
+750ac000-750ad000 rw-p 00025000 b3:07 714102     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libjava.so
+750ad000-750ba000 r-xp 00000000 b3:07 714119     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libverify.so
+750ba000-750c9000 ---p 0000d000 b3:07 714119     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libverify.so
+750c9000-750ca000 r--p 0000c000 b3:07 714119     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libverify.so
+750ca000-750cb000 rw-p 0000d000 b3:07 714119     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libverify.so
+750cb000-750d1000 r-xp 00000000 b3:07 278859     /lib/arm-linux-gnueabihf/librt-2.24.so
+750d1000-750e0000 ---p 00006000 b3:07 278859     /lib/arm-linux-gnueabihf/librt-2.24.so
+750e0000-750e1000 r--p 00005000 b3:07 278859     /lib/arm-linux-gnueabihf/librt-2.24.so
+750e1000-750e2000 rw-p 00006000 b3:07 278859     /lib/arm-linux-gnueabihf/librt-2.24.so
+750e2000-750e6000 ---p 00000000 00:00 0 
+750e6000-75133000 rw-p 00000000 00:00 0 
+75133000-7514f000 r-xp 00000000 b3:07 297523     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7514f000-7515e000 ---p 0001c000 b3:07 297523     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7515e000-7515f000 r--p 0001b000 b3:07 297523     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7515f000-75160000 rw-p 0001c000 b3:07 297523     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+75160000-751cd000 r-xp 00000000 b3:07 278839     /lib/arm-linux-gnueabihf/libm-2.24.so
+751cd000-751dd000 ---p 0006d000 b3:07 278839     /lib/arm-linux-gnueabihf/libm-2.24.so
+751dd000-751de000 r--p 0006d000 b3:07 278839     /lib/arm-linux-gnueabihf/libm-2.24.so
+751de000-751df000 rw-p 0006e000 b3:07 278839     /lib/arm-linux-gnueabihf/libm-2.24.so
+751df000-7530e000 r-xp 00000000 b3:07 532722     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.22
+7530e000-7531e000 ---p 0012f000 b3:07 532722     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.22
+7531e000-75323000 r--p 0012f000 b3:07 532722     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.22
+75323000-75325000 rw-p 00134000 b3:07 532722     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.22
+75325000-75327000 rw-p 00000000 00:00 0 
+75327000-7594c000 r-xp 00000000 b3:07 714086     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/client/libjvm.so
+7594c000-7595c000 ---p 00625000 b3:07 714086     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/client/libjvm.so
+7595c000-7596c000 r--p 00625000 b3:07 714086     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/client/libjvm.so
+7596c000-75982000 rw-p 00635000 b3:07 714086     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/client/libjvm.so
+75982000-76d9d000 rw-p 00000000 00:00 0 
+76d9d000-76ec7000 r-xp 00000000 b3:07 278835     /lib/arm-linux-gnueabihf/libc-2.24.so
+76ec7000-76ed6000 ---p 0012a000 b3:07 278835     /lib/arm-linux-gnueabihf/libc-2.24.so
+76ed6000-76ed8000 r--p 00129000 b3:07 278835     /lib/arm-linux-gnueabihf/libc-2.24.so
+76ed8000-76ed9000 rw-p 0012b000 b3:07 278835     /lib/arm-linux-gnueabihf/libc-2.24.so
+76ed9000-76edc000 rw-p 00000000 00:00 0 
+76edc000-76ede000 r-xp 00000000 b3:07 278838     /lib/arm-linux-gnueabihf/libdl-2.24.so
+76ede000-76eed000 ---p 00002000 b3:07 278838     /lib/arm-linux-gnueabihf/libdl-2.24.so
+76eed000-76eee000 r--p 00001000 b3:07 278838     /lib/arm-linux-gnueabihf/libdl-2.24.so
+76eee000-76eef000 rw-p 00002000 b3:07 278838     /lib/arm-linux-gnueabihf/libdl-2.24.so
+76eef000-76efd000 r-xp 00000000 b3:07 714088     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/jli/libjli.so
+76efd000-76f0c000 ---p 0000e000 b3:07 714088     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/jli/libjli.so
+76f0c000-76f0d000 r--p 0000d000 b3:07 714088     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/jli/libjli.so
+76f0d000-76f0e000 rw-p 0000e000 b3:07 714088     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/jli/libjli.so
+76f0e000-76f24000 r-xp 00000000 b3:07 297474     /lib/arm-linux-gnueabihf/libz.so.1.2.8
+76f24000-76f33000 ---p 00016000 b3:07 297474     /lib/arm-linux-gnueabihf/libz.so.1.2.8
+76f33000-76f34000 r--p 00015000 b3:07 297474     /lib/arm-linux-gnueabihf/libz.so.1.2.8
+76f34000-76f35000 rw-p 00016000 b3:07 297474     /lib/arm-linux-gnueabihf/libz.so.1.2.8
+76f35000-76f4b000 r-xp 00000000 b3:07 278849     /lib/arm-linux-gnueabihf/libpthread-2.24.so
+76f4b000-76f5a000 ---p 00016000 b3:07 278849     /lib/arm-linux-gnueabihf/libpthread-2.24.so
+76f5a000-76f5b000 r--p 00015000 b3:07 278849     /lib/arm-linux-gnueabihf/libpthread-2.24.so
+76f5b000-76f5c000 rw-p 00016000 b3:07 278849     /lib/arm-linux-gnueabihf/libpthread-2.24.so
+76f5c000-76f5e000 rw-p 00000000 00:00 0 
+76f5e000-76f65000 r-xp 00000000 b3:07 714120     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libzip.so
+76f65000-76f74000 ---p 00007000 b3:07 714120     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libzip.so
+76f74000-76f75000 r--p 00006000 b3:07 714120     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libzip.so
+76f75000-76f76000 rw-p 00007000 b3:07 714120     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/libzip.so
+76f76000-76f7b000 r-xp 00000000 b3:07 532037     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f7b000-76f8a000 ---p 00005000 b3:07 532037     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f8a000-76f8b000 r--p 00004000 b3:07 532037     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f8b000-76f8c000 rw-p 00005000 b3:07 532037     /usr/lib/arm-linux-gnueabihf/libarmmem.so
+76f8c000-76fad000 r-xp 00000000 b3:07 269592     /lib/arm-linux-gnueabihf/ld-2.24.so
+76fad000-76faf000 r--s 00008000 b3:07 714137     /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/ext/sunec.jar
+76faf000-76fb7000 rw-s 00000000 b3:07 347418     /tmp/hsperfdata_pi/1027
+76fb7000-76fb8000 r--p 00000000 00:00 0 
+76fb8000-76fbc000 rw-p 00000000 00:00 0 
+76fbc000-76fbd000 r--p 00020000 b3:07 269592     /lib/arm-linux-gnueabihf/ld-2.24.so
+76fbd000-76fbe000 rw-p 00021000 b3:07 269592     /lib/arm-linux-gnueabihf/ld-2.24.so
+7efd7000-7eff9000 rw-p 00000000 00:00 0          [stack]
+7eff9000-7effa000 r-xp 00000000 00:00 0          [sigpage]
+7effa000-7effb000 r--p 00000000 00:00 0          [vvar]
+7effb000-7effc000 r-xp 00000000 00:00 0          [vdso]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: talkToDevices.Tester
+java_class_path (initial): /home/pi/workspace/DT080BProject/bin:/home/pi/jadex-3.0.115/apps/jadex-applications-web-3.0.115.jar:/home/pi/jadex-3.0.115/apps/jadex-editor-bpmn-3.0.115.jar:/home/pi/jadex-3.0.115/lib/activation-1.1.jar:/home/pi/jadex-3.0.115/lib/annotations-3.0.0.jar:/home/pi/jadex-3.0.115/lib/antlr-2.7.7.jar:/home/pi/jadex-3.0.115/lib/antlr-runtime-3.1.3.jar:/home/pi/jadex-3.0.115/lib/asm-all-5.0.3.jar:/home/pi/jadex-3.0.115/lib/bridj-0.6.2.jar:/home/pi/jadex-3.0.115/lib/collections-generic-4.01.jar:/home/pi/jadex-3.0.115/lib/colt-1.2.0.jar:/home/pi/jadex-3.0.115/lib/concurrent-1.3.4.jar:/home/pi/jadex-3.0.115/lib/core-1.54.0.0.jar:/home/pi/jadex-3.0.115/lib/de.huxhorn.sulky.3rdparty.jlayer-1.0.jar:/home/pi/jadex-3.0.115/lib/dx-1.7.jar:/home/pi/jadex-3.0.115/lib/filters-2.0.235-1.jar:/home/pi/jadex-3.0.115/lib/gluegen-rt.jar:/home/pi/jadex-3.0.115/lib/h2-1.3.171.jar:/home/pi/jadex-3.0.115/lib/hamcrest-core-1.3.jar:/home/pi/jadex-3.0.115/lib/jadex-applib-bdi-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-bdi-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-bdiv3-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-bpmn-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-java8-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-micro-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-applications-mixed-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-bridge-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-commons-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-commons-gui-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-commons-security-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-integration-test-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-javaparser-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-json-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-kernel-application-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-kernel-base-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-kernel-bdiv3-3.0.115.jar:/home/pi/jadex-3.0.115/lib/jadex-kernel-bpmn-3.0.
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x5b0f20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x5b0f20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x4778f4], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x4778f4], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x4778f4], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x4777a0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x4779ac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x4779ac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x4779ac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x4779ac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+
+uname:Linux 4.14.98-v7 #1 SMP Thu Mar 21 22:26:23 GMT 2019 armv7l
+libc:glibc 2.24 NPTL 2.24 
+rlimit: STACK 8192k, CORE 0k, NPROC 7345, NOFILE 1048576, AS infinity
+load average:0.07 0.14 0.08
+
+/proc/meminfo:
+MemTotal:         949448 kB
+MemFree:          338832 kB
+MemAvailable:     579024 kB
+Buffers:           31212 kB
+Cached:           275948 kB
+SwapCached:            0 kB
+Active:           372612 kB
+Inactive:         197200 kB
+Active(anon):     262960 kB
+Inactive(anon):    27888 kB
+Active(file):     109652 kB
+Inactive(file):   169312 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:         102396 kB
+Dirty:               148 kB
+Writeback:             0 kB
+AnonPages:        262788 kB
+Mapped:           114320 kB
+Shmem:             28200 kB
+Slab:              24024 kB
+SReclaimable:      12372 kB
+SUnreclaim:        11652 kB
+KernelStack:        2072 kB
+PageTables:         4108 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      577120 kB
+Committed_AS:    1791520 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:           8192 kB
+CmaFree:            6796 kB
+
+
+CPU:total 4 (initial active 4) 0x41:0x0:0xd03:4
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2835
+Revision	: a020d3
+Serial		: 0000000072e94b45
+
+
+Memory: 4k page, physical 949448k(338832k free), swap 102396k(102396k free)
+
+vm_info: OpenJDK Client VM (25.181-b13) for linux-aarch32 JRE (1.8.0_181-8u181-b13-2~deb9u1-b13), built on Oct 22 2018 18:05:23 by "buildd" with gcc 6.3.0 20170516
+
+time: Mon Mar 25 12:40:31 2019
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
