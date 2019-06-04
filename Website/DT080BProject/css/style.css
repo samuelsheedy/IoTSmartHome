@@ -1,0 +1,547 @@
+body{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 2vh;
+
+}
+#indexBodyDiv
+{
+    
+    width:100%;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top:0;
+    left:0;
+}
+#main 
+{
+    transition: margin-left .5s;
+    z-index: 2;
+}
+.sidenav 
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a 
+{
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    font-size: 2vw;
+    color: #cccccc;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover 
+{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn 
+{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 2vw;
+    margin-left: 0;
+}
+.selectButton
+{
+    font-size:2vh;
+    border-color: hotpink;
+    border-style: ridge;
+    width: 98%;
+    height:5vh;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 5px;
+    margin:1%;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+}
+.selectButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+.selectButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+#chartButton
+{
+    font-family: "Allerta Stencil", Sans-serif;
+    font-size:4vh;
+    border-color: hotpink;
+    border-style: ridge;
+    width: 16.667%;
+    height:24.6%;
+    color: black;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 0;
+    position: inherit;
+    margin:auto;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+    left:66.7%;
+    bottom:-25%;
+}
+#chartButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+#chartButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+#pumpOnButton
+{
+    font-family: "Allerta Stencil", Sans-serif;
+    font-size:4vh;
+    border-color: hotpink;
+    border-style: ridge;
+    width: 16.667%;
+    height:24.6%;
+    color: black;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 0;
+    position: inherit;
+    margin:auto;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+    left:0;
+    bottom:-25%;
+}
+#pumpOnButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+#pumpOnButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+#pumpOffButton
+{
+    font-family: "Allerta Stencil", Sans-serif;
+    font-size:4vh;
+    border-color: hotpink;
+    border-style: ridge;
+    width: 16.667%;
+    height:24.6%;
+    color: black;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 0;
+    position: inherit;
+    margin:auto;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+    left:33%;
+    bottom:-25%;
+}
+#pumpOffButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+#pumpOffButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+#camButton
+{
+    font-family: "Allerta Stencil", Sans-serif;
+    font-size:4vh;
+    border-color: hotpink;
+    border-style: ridge;
+    width: 16.667%;
+    height:24.6%;
+    color: black;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 0;
+    position: inherit;
+    margin:auto;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+    right:20%;
+    bottom:-25%;
+}
+#camButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+#camButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+#closeNavButton
+{
+    visibility: hidden;
+    top: 0%;
+}
+#formDiv
+{
+    width: 17.7%;
+    height: 0%;
+    position: fixed;
+    transition: 0.5s;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,rgb(64, 71, 100),#314655);
+    padding: 1%;
+    text-align: center;
+    color:white;
+    border-right-style: none;
+    overflow:hidden;
+}
+#formDiv a 
+{
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    font-size: 2vw;
+    color: #cccccc;
+    display: block;
+    transition: 0.3s;
+}
+
+#formDiv a:hover 
+{
+    color: #f1f1f1;
+}
+#main
+{
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+    position: fixed;
+    left: 1%;
+
+}
+#formDiv .closebtn 
+{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 2vw;
+    margin-left: 0;
+}
+
+.inputClass
+{
+    font-size:2vh;
+    height:4vh;
+    width: 95%;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 1%;
+    text-align: center;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+}
+.inputClass:hover
+{
+    border-radius: 35px;    
+    background-position: 0px;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+}
+.inputClass:active
+{
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+}
+
+.splitDiv
+{
+    width:0%; 
+    height:0%; 
+    position: fixed;
+    opacity: 1;
+}
+#topDiv
+{
+    z-index: 0;
+    left:0%;
+    top:0%;
+    background: linear-gradient(to right, #414345, #232526);
+    opacity: 0;
+}
+#midLeftDiv
+{
+    opacity: 0.8;
+    left:0%;
+    top:25%;
+    width: 33.3%;
+}
+#midCentDiv
+{
+    opacity: 0.8;
+    left:33.3%;
+    top:25%;
+    width: 33.3%;
+}
+#midRightDiv
+{
+
+    left:66.7%;
+    right:99.7%;
+    top:25%;
+    opacity:.8;
+    height:50%;
+    width:3.3%;
+}
+#botDiv
+{
+    opacity:0;
+    left:0%;
+    top:74.9%;
+    bottom:0%;
+    background: linear-gradient(to right,#232526, #414345);
+    border-top: 1px solid #000;
+    background-size: auto 100%;
+    padding:0;
+}
+#botDiv1
+{
+    width:16.667%;
+    text-align: center;
+    height:100%;
+    position: fixed;
+    left:0%;
+    display: inline-block;
+    padding:0;
+    top: 125%;
+    margin:0;
+}
+#botDiv2
+{   
+    padding:0;
+    margin:0;
+    text-align: center;   
+    width:16.667%;
+    position: fixed;
+    left:16.667%;;
+    height:100%;
+    top: 125%;
+    display: inline-block;
+}
+#botDiv3
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:16.667%;
+    position: fixed;
+    left:33.334%;
+    height:100%;
+    top: 125%;
+    display: inline-block;
+}
+#botDiv4
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:16.667%;
+    position: fixed;
+    left:50.001%;
+    height:100%;
+    top: 125%;
+    display: inline-block;
+}
+#botDiv5
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:16.667%;
+    position: fixed;
+    left:66.668%;
+    height:100%;
+    top: 125%;
+    display: inline-block;
+}
+#botDiv6
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:16.667;
+    position: fixed;
+    left:83.335;
+    height:100%;
+    top: 125%;
+    display: inline-block;
+}
+
+.animPics
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#aboutTitle
+{
+    color: #fff;
+    font-size: 5vw;
+    text-align: center;
+    opacity: 0;
+    transform:rotateY(180deg);
+}
+#groupInfoHead
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#groupInfo
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#courseInfo
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#randomPic
+{
+    opacity:1;
+}
+#contentBody
+{
+    position: fixed;
+    width: 99.3%;
+    height: 98.7%;
+    top: 0;
+    left: 0%;
+    right:0;
+    border:5px solid hotpink;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-blend-mode: difference;
+    border-style: groove;
+    text-align: center;
+    color:white;
+    margin:0;
+    padding:0;
+    transition: 0.5s;
+    border-right: none;
+}
+#fadeDiv
+{
+    background-color: rgba(0, 0, 0, 0.98);   
+    animation-name: fadeIntro;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    -moz-animation-name: fadeIntro;
+    -moz-animation-duration: 5s;
+    background-blend-mode: overlay, soft-light;
+    filter: opacity(98%);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -3;
+    top:0;
+    left:0;
+}
+@keyframes fadeIntro 
+{
+    from {filter: opacity(0%);}
+    to {filter: opacity(98%);}
+}
+@-moz-keyframes fadeIntro 
+{
+    from {filter: opacity(0%);}
+    to {filter: opacity(98%);}
+}
+#flashDiv
+{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top:0;
+    left:0;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+}
+
+#cameraDiv
+{
+	position: relative;
+    height: 100%;
+    left:0%;
+    overflow: hidden;
+}
+#camFrame
+{
+	position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

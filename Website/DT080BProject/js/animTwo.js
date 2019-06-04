@@ -1,0 +1,16 @@
+var topDiv = document.getElementById("topDiv")
+var midTopDiv = document.getElementById("midTopDiv")
+var midBotDiv = document.getElementById("midBotDiv")
+var botDiv = document.getElementById("botDiv")
+
+TweenMax.staggerTo(["#topDiv", "#botDiv" ],1.5,{opacity:.8, width: "100%", height: "24.5%",ease:Bounce.easeOut},0.5)
+TweenMax.staggerTo(["#botDiv1", "#botDiv2", "#botDiv3", "#botDiv4","botDiv5","botDiv6"],1.5,{opacity:.8,top:"74.2%",delay:1.5,ease:Linear.easeNone},0.5)
+TweenMax.staggerTo(["#chartButton","#pumpOnButton","#pumpOffButton","#camButton"],1.5,{opacity:.8,bottom:"0",delay:3.5,ease:Linear.easeNone},0.5)
+TweenMax.staggerTo(["#formDiv"],1,{opacity:.8,height:"95%", ease:Linear.easeNone},0.5)
+TweenMax.staggerTo(["#midLeftDiv"], 1, {opacity:.8,height:"50%",width:"32.8%", delay:1.5}, 0.5)
+TweenMax.staggerTo(["#midCentDiv"], 1, {opacity:.8,height:"50%",width:"33%", delay:1.5}, 0.5)
+TweenMax.staggerTo(["#midRightDiv"], 1, {opacity:.8,height:"50%",width:"33.6%", delay:1.5}, 0.5)
+TweenMax.staggerTo(["#midLeftDiv","#midCentDiv","#midRightDiv"], .8, {transform:"rotateX(180deg", delay:1.5},0.5)
+TweenMax.staggerTo(["#midLeftDiv","#midCentDiv","#midRightDiv"], .8, {transform:"rotateX(360deg", delay:3.5},0.5)
+TweenMax.to(["#aboutTitle"],4,{opacity:"1", delay:1.5,transform:"rotateY(360deg)", ease:Bounce.easeOut})
+TweenMax.to(["#aboutTitle"], 2, {text:{value:"Live Data", delimiter:" "},delay:1, ease:Linear.easeNone});
